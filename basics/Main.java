@@ -1,3 +1,7 @@
+
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 public class Main {
   public static void main (String[] args) {
 
@@ -13,6 +17,9 @@ public class Main {
 
     // flip coin
     flipNHeads(1);
+
+    //clock
+    clock();
   }
 
   public static String pluralize(String animal, int count) {
@@ -38,5 +45,16 @@ public class Main {
       }
     }
     System.out.println("It took " + flips + " flips to flip " + num + " head in a row.");
+  }
+
+  public static void clock(){
+    LocalDateTime prevTime = LocalDateTime.now();
+    while(true){
+      LocalDateTime currentTime = LocalDateTime.now();
+      if(prevTime.getSecond() != currentTime.getSecond()){
+        prevTime = currentTime; // reassign the prevTime to the new time
+        System.out.println(currentTime.format(DateTimeFormatter.ofPattern("HH:mm:ss")));
+      }
+    }
   }
 }
