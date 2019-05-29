@@ -21,6 +21,7 @@ public class Library {
             if(previousVal == arr[i]) {
                 isContained = true;
             }
+            previousVal = arr[i];
         }
         return isContained;
     }
