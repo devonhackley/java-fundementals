@@ -12,21 +12,15 @@ public class Library {
         return rollArray;
     }
 
-    public static boolean contains(int[] arr, double val){
-        boolean contained = false;
-        for(int i : arr){
-            if(i == val){
-                contained = true;
-                break;
-            }
-        }
-        return contained;
-    }
-
     public static boolean containsDuplicates(int[] arr){
         boolean isContained = false;
-        for(int i = 0; i < arr.length; i++){
-            isContained = contains(arr, arr[i]);
+
+        int previousVal = arr[0];
+
+        for(int i = 1; i < arr.length; i++){
+            if(previousVal == arr[i]) {
+                isContained = true;
+            }
         }
         return isContained;
     }
