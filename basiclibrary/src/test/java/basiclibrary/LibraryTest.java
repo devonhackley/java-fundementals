@@ -27,7 +27,7 @@ public class LibraryTest {
         assertTrue("The method should return an average of the values in an array", libraryForTest.calculateAverages(arra) == 2.5);
     }
 
-    @Test public void testArraysOfArraysMethod() {
+    @Test public void testLowestAverageOfArrayssMethod() {
         Library libraryForTest = new Library();
         int[][] weeklyMonthTemperatures = {
                 {66, 64, 58, 65, 71, 57, 60}, //63
@@ -37,6 +37,6 @@ public class LibraryTest {
         };
         int[] expected = new int[] {55, 54, 60, 53, 59, 57, 61};
 
-        assertArrayEquals("The method should return the array with the lowest average", libraryForTest.arraysOfArrays(weeklyMonthTemperatures), expected);
+        assertArrayEquals("The method should return the array with the lowest average", libraryForTest.lowestAverageOfArrays(weeklyMonthTemperatures), expected);
     }
 }
