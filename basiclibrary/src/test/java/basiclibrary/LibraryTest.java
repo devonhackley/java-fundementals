@@ -17,7 +17,7 @@ public class LibraryTest {
         Library libraryForTest = new Library();
         int[] noDupes = new int[] {2, 3, 4, 5};
         int[] hasDupes = new int[] {2, 3, 3, 4};
-        assertTrue("The method should return false", libraryForTest.containsDuplicates(noDupes));
+        assertFalse("The method should return false", libraryForTest.containsDuplicates(noDupes));
         assertTrue("The method should return true", libraryForTest.containsDuplicates(hasDupes));
     }
 
