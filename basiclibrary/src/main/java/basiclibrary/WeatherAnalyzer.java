@@ -25,6 +25,8 @@ public class WeatherAnalyzer {
 
         int min = 999, max = 0;
 
+        
+
         for(int i = 0; i < arr.length; i++){
             for(int j = 0; j < arr[i].length; j++){
                 min = arr[i][j] < min ? arr[i][j] : min;
