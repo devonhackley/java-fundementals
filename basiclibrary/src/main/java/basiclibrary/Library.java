@@ -21,6 +21,7 @@ public class Library {
             if(previousVal == arr[i]) {
                 isContained = true;
             }
+            previousVal = arr[i];
         }
         return isContained;
     }
@@ -48,7 +49,7 @@ public class Library {
     }
 
 
-    public static int[] arraysOfArrays(int[][] arr){
+    public static int[] lowestAverageOfArrays(int[][] arr){
         float[] averages = new float[arr.length];
         for(int i = 0; i<arr.length; i++) {
             averages[i] = calculateAverages(arr[i]);
