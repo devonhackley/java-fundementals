@@ -6,7 +6,7 @@ import java.util.List;
 public class Restaurant {
     private String name;
     private int ratings;
-    private int price;
+    private String price;
     private List<Review> reviews;
 
     public List<Review>  getReviews() {
@@ -22,11 +22,11 @@ public class Restaurant {
         return ratings;
     }
 
-    public int getPrice() {
+    public String getPrice() {
         return price;
     }
 
-    public Restaurant(String name, int ratings, int price, List<Review> reviews){
+    public Restaurant(String name, int ratings, String price, List<Review> reviews){
         this.name = name;
         this.ratings = ratings;
         this.price = price;
@@ -35,7 +35,7 @@ public class Restaurant {
 
     public String toString(){
         StringBuilder response = new StringBuilder();
-        String first = String.format("%s has a rating of %d and is in the price category: %d\nReviews: \n", this.name, this.ratings, this.price);
+        String first = String.format("%s has a rating of %d and is in the price category: %s\nReviews: \n", this.name, this.ratings, this.price);
 
         response.append(first);
         for(Review review : this.reviews){

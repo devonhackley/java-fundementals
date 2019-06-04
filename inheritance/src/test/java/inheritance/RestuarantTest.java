@@ -10,12 +10,12 @@ import static org.junit.Assert.*;
 public class RestuarantTest {
     @Test public void testRestaurantConstructor(){
         List<Review> reviews = new ArrayList<>();
-        Restaurant restaurant = new Restaurant("Hot Mama's", 0, 3, reviews);
+        Restaurant restaurant = new Restaurant("Hot Mama's", 0, "$$$", reviews);
 
         List<Review> expected = new ArrayList<>();
         assertEquals("Hot Mama's", restaurant.getName());
         assertEquals(0, restaurant.getRatings());
-        assertEquals(3, restaurant.getPrice());
+        assertEquals("$$$", restaurant.getPrice());
         assertEquals(expected, restaurant.getReviews());
 
     }
@@ -23,9 +23,9 @@ public class RestuarantTest {
         Review review = new Review("the body of the review.", "Devon", 4);
         List<Review> reviews = new ArrayList<>();
         reviews.add(review);
-        Restaurant restaurant = new Restaurant("Hot Mama's", review.getNumOfStars(), 3, reviews);
+        Restaurant restaurant = new Restaurant("Hot Mama's", review.getNumOfStars(), "$$$", reviews);
 
-        assertEquals("Hot Mama's has a rating of 4 and is in the price category: 3\n" +
+        assertEquals("Hot Mama's has a rating of 4 and is in the price category: $$$\n" +
                 "Reviews: \n" +
                 " Author: Devon\n" +
                 " Body: the body of the review.\n" +
@@ -35,7 +35,7 @@ public class RestuarantTest {
         Review review = new Review("the body of the review.", "Devon", 4);
         List<Review> reviews = new ArrayList<>();
         reviews.add(review);
-        Restaurant restaurant = new Restaurant("Hot Mama's", 4, 3, reviews);
+        Restaurant restaurant = new Restaurant("Hot Mama's", 4, "$$$", reviews);
 
         Review review2 = new Review("this restaurant sucks", "Brady", 1);
         Review review3 = new Review("I loved this restaurant", "Jim", 5);
@@ -51,7 +51,7 @@ public class RestuarantTest {
         expected.add(review3);
         expected.add(review4);
         assertEquals(expected, restaurant.getReviews());
-        assertEquals("Hot Mama's has a rating of 3 and is in the price category: 3\n" +
+        assertEquals("Hot Mama's has a rating of 3 and is in the price category: $$$\n" +
                 "Reviews: \n" +
                 " Author: Devon\n" +
                 " Body: the body of the review.\n" +
