@@ -1,4 +1,4 @@
-# Lab 1: Basics
+# Lab 6: Inheritance
 
 This repo is for lab 6. Within this lab we are asked to create classes and interfaces to represent reviews of restaurants.
 
