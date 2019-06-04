@@ -12,15 +12,20 @@ public class Review {
     public int getNumOfStars() {
         return numOfStars;
     }
+    public String getRestaurantName() {
+        return restaurantName;
+    }
 
     private String body;
     private String author;
     private int numOfStars;
+    private  String restaurantName;
 
-    public Review(String body, String author, int numOfStars){
+    public Review(String body, String author, int numOfStars, String restaurantName){
         this.body = body;
         this.author = author;
         this.numOfStars = numOfStars;
+        this.restaurantName = restaurantName;
     }
 
     public String toString(){
