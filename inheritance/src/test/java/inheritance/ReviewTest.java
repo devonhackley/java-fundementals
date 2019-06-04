@@ -13,7 +13,12 @@ public class ReviewTest {
 
     @Test public void testReviewToString(){
         Review review = new Review("the body of the review.", "Devon", 4, "Cool place");
-        assertEquals("Author: Devon\n  Body: the body of the review.\n Rating: 4", review.toString());
+        System.out.println(review.toString());
+        String expected = " Author: Devon\n" +
+                " Body: the body of the review.\n" +
+                " Rating: 4\n" +
+                " \n";
+        assertEquals(expected, review.toString());
     }
 
 }
