@@ -20,7 +20,7 @@ public class RestuarantTest {
 
     }
     @Test public void testRestaurantToString(){
-        Review review = new Review("the body of the review.", "Devon", 4);
+        Review review = new Review("the body of the review.", "Devon", 4,"Hot Mama's" );
         List<Review> reviews = new ArrayList<>();
         reviews.add(review);
         Restaurant restaurant = new Restaurant("Hot Mama's", review.getNumOfStars(), "$$$", reviews);
@@ -32,14 +32,14 @@ public class RestuarantTest {
                 " Rating: 4\n"+ " \n", restaurant.toString());
     }
     @Test public void testRestaurantAddReview(){
-        Review review = new Review("the body of the review.", "Devon", 4);
+        Review review = new Review("the body of the review.", "Devon", 4, "Hot Mama's");
         List<Review> reviews = new ArrayList<>();
         reviews.add(review);
         Restaurant restaurant = new Restaurant("Hot Mama's", 4, "$$$", reviews);
 
-        Review review2 = new Review("this restaurant sucks", "Brady", 1);
-        Review review3 = new Review("I loved this restaurant", "Jim", 5);
-        Review review4 = new Review("the service was terrible, but the food was amazing", "Kathy", 4);
+        Review review2 = new Review("this restaurant sucks", "Brady", 1, "Hot Mama's");
+        Review review3 = new Review("I loved this restaurant", "Jim", 5, "Hot Mama's");
+        Review review4 = new Review("the service was terrible, but the food was amazing", "Kathy", 4, "Hot Mama's");
 
         restaurant.addReview(review2);
         restaurant.addReview(review3);
