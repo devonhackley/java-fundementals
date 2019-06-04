@@ -4,4 +4,5 @@ This repo shows the expected file structure for Code 401: Java labs. Click each 
 ## Labs 
   * [Lab 1: basics](./basics/README.md)
   * [Lab 2: basicLibrary](./basiclibrary/README.md)
+  * [Lab 6: Inheritance](./inheritance/README.md)
 
