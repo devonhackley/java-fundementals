@@ -1,5 +1,6 @@
 package inheritance;
 
+import java.util.LinkedList;
 import java.util.List;
 
 public class Theater {
@@ -33,6 +34,7 @@ public class Theater {
     public Theater(String name, List<String> movies){
         this.name = name;
         this.movies = movies;
+        this.reviews = new LinkedList<>();
     }
 
     public void addMovie(String movieName){

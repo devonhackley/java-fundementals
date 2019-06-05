@@ -39,7 +39,7 @@ public class Restaurant {
         String first = String.format("%s has a rating of %d and is in the price category: %s\nReviews: \n", this.name, this.ratings, this.price);
 
         response.append(first);
-        for(Review review : this.reviews){
+        for(RestaurantReview review : this.reviews){
             response.append(review.toString());
         }
         return response.toString();
@@ -54,7 +54,7 @@ public class Restaurant {
     }
 
     public void updateRating(RestaurantReview review){
-        for(Review r : this.reviews){
+        for(RestaurantReview r : this.reviews){
             if(r.getAuthor() != review.getAuthor()){
                 this.ratings += r.getNumOfStars();
             }

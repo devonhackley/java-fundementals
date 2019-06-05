@@ -65,13 +65,21 @@ public class TheaterTest {
         theater.addMovie("Dectective Pikachu");
         theater.addMovie("John Wick 3");
 
-        TheaterReview review = new TheaterReview("The theater was great", "Devon", 4, theater);
+        TheaterReview review = new TheaterReview("The theater was great", "Devon", 4, theater, "John Wick 3");
+
+        theater.addReview(review);
 
         System.out.println(theater.toString());
         assertEquals("Regal Cinema is currently showing: \n" +
                 "Avengers: EndGame\n" +
                 "Dectective Pikachu\n" +
-                "John Wick 3\n", theater.toString());
+                "John Wick 3\n" +
+                "Theater Reviews: \n" +
+                " Author: Devon\n" +
+                " Body: The theater was great\n" +
+                " Rating: 4\n" +
+                " Movie: John Wick 3\n" +
+                " \n", theater.toString());
     }
 
     @Test public void testTheaterAddReview(){
