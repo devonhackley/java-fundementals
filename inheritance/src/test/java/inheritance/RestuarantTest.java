@@ -9,8 +9,7 @@ import static org.junit.Assert.*;
 
 public class RestuarantTest {
     @Test public void testRestaurantConstructor(){
-        List<Review> reviews = new ArrayList<>();
-        Restaurant restaurant = new Restaurant("Hot Mama's", 0, "$$$", reviews);
+        Restaurant restaurant = new Restaurant("Hot Mama's", 0, "$$$");
 
         List<Review> expected = new ArrayList<>();
         assertEquals("Hot Mama's", restaurant.getName());
@@ -20,10 +19,10 @@ public class RestuarantTest {
 
     }
     @Test public void testRestaurantToString(){
-        Review review = new Review("the body of the review.", "Devon", 4,"Hot Mama's" );
-        List<Review> reviews = new ArrayList<>();
-        reviews.add(review);
-        Restaurant restaurant = new Restaurant("Hot Mama's", review.getNumOfStars(), "$$$", reviews);
+
+        Restaurant restaurant = new Restaurant("Hot Mama's", 4, "$$$");
+        RestaurantReview review = new RestaurantReview("the body of the review.", "Devon", 4,restaurant);
+        restaurant.addReview(review);
 
         assertEquals("Hot Mama's has a rating of 4 and is in the price category: $$$\n" +
                 "Reviews: \n" +
@@ -32,14 +31,13 @@ public class RestuarantTest {
                 " Rating: 4\n"+ " \n", restaurant.toString());
     }
     @Test public void testRestaurantAddReview(){
-        Review review = new Review("the body of the review.", "Devon", 4, "Hot Mama's");
-        List<Review> reviews = new ArrayList<>();
-        reviews.add(review);
-        Restaurant restaurant = new Restaurant("Hot Mama's", 4, "$$$", reviews);
+        Restaurant restaurant = new Restaurant("Hot Mama's", 4, "$$$");
+        RestaurantReview review = new RestaurantReview("the body of the review.", "Devon", 4,restaurant);
+        restaurant.addReview(review);
 
-        Review review2 = new Review("this restaurant sucks", "Brady", 1, "Hot Mama's");
-        Review review3 = new Review("I loved this restaurant", "Jim", 5, "Hot Mama's");
-        Review review4 = new Review("the service was terrible, but the food was amazing", "Kathy", 4, "Hot Mama's");
+        RestaurantReview review2 = new RestaurantReview("this restaurant sucks", "Brady", 1, restaurant);
+        RestaurantReview review3 = new RestaurantReview("I loved this restaurant", "Jim", 5, restaurant);
+        RestaurantReview review4 = new RestaurantReview("the service was terrible, but the food was amazing", "Kathy", 4, restaurant);
 
         restaurant.addReview(review2);
         restaurant.addReview(review3);

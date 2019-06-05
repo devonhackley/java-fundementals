@@ -1,15 +1,16 @@
 package inheritance;
 
 
+import java.util.LinkedList;
 import java.util.List;
 
 public class Restaurant {
     private String name;
     private int ratings;
     private String price;
-    private List<Review> reviews;
+    private List<RestaurantReview> reviews;
 
-    public List<Review>  getReviews() {
+    public List<RestaurantReview>  getReviews() {
         return reviews;
     }
 
@@ -26,11 +27,11 @@ public class Restaurant {
         return price;
     }
 
-    public Restaurant(String name, int ratings, String price, List<Review> reviews){
+    public Restaurant(String name, int ratings, String price){
         this.name = name;
         this.ratings = ratings;
         this.price = price;
-        this.reviews = reviews;
+        this.reviews = new LinkedList<>();
     }
 
     public String toString(){
@@ -44,7 +45,7 @@ public class Restaurant {
         return response.toString();
     }
 
-    public void addReview(Review review){
+    public void addReview(RestaurantReview review){
         boolean isContained = this.reviews.contains(review);
         if(!isContained){
             this.reviews.add(review);
@@ -52,7 +53,7 @@ public class Restaurant {
         }
     }
 
-    public void updateRating(Review review){
+    public void updateRating(RestaurantReview review){
         for(Review r : this.reviews){
             if(r.getAuthor() != review.getAuthor()){
                 this.ratings += r.getNumOfStars();
