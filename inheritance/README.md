@@ -1,5 +1,6 @@
 # Lab Inheritance
 
+
 This repo is for the inheritance labs. Within this lab we are asked to create classes and interfaces to represent reviews of restaurants, shops, and theaters.
 
 
